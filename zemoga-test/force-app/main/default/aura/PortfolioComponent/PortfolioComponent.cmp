@@ -1,0 +1,66 @@
+<aura:component controller="PortfolioController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	   
+    <aura:attribute name="accounts" type="Object[]" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:card>
+        <p class="slds-p-horizontal_small cardBackground">
+            <div class="slds-grid slds-gutters">
+            <!-- First Column -->
+            <div class="slds-col slds-size_1-of-6">
+                <!-- Image -->
+                <div class="slds-align_absolute-right">
+                    <img src="{!$Resource.anonymousImage}" />
+                </div>
+                <!-- Timeline section -->
+                <div class="slds-m-top_large">
+                    <lightning:card title="John's Timeline">
+                        <lightning:layout multipleRows="true" verticalAlign="start">
+                            <aura:iteration items="{!v.accounts}" var="account" indexVar="index">
+                                <lightning:layoutItem size="12" padding="around-small">
+                                    <div class="slds-media slds-media_center">
+                                        <div class="slds-media__figure">
+                                            <lightning:icon iconName="standard:account" size="small" />
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <h3>{!account.Name}</h3>
+                                        </div>
+                                    </div>
+                                </lightning:layoutItem>
+                            </aura:iteration>
+                        </lightning:layout>
+                        <div class="slds-m-top_medium">
+                            <a href="/lightning/o/Account/list" class="slds-p-horizontal_small slds-text-link">Go to Account ></a>
+                        </div>
+                    </lightning:card>
+                </div>
+            </div>
+            <!-- Second Column -->
+            <div class="slds-col slds-size_5-of-6">
+                <!-- Work Experience -->
+                <div class="slds-m-bottom_medium">
+                    <h1 class="slds-text-heading_large">
+                        John Snow
+                    </h1>
+                </div>                
+				<lightning:card title="Work Experience">
+                    <p class="slds-p-horizontal_medium">
+                     	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper sem nisi, a aliquam magna vulputate at. Integer mollis nunc
+                        vitae sapien dapibus egestas eu id libero. Nam vel mattis nisl. Vivamus ornare augue sed ex commodo, sit amet ultrices dui efficitur. Maecenas 
+                        tempor tortor pellentesque, vehicula felis sed, malesuada neque. In viverra leo in venenatis vestibulum. Sed in mollis turpis. Cras ornare eleifend 
+                        orci at ultrices. Morbi hendrerit neque sed purus accumsan pellentesque. Morbi nec metus lobortis, ultrices sem ut, rutrum purus. In ligula nulla, 
+                        euismod sit amet aliquet ut, fermentum id libero. Maecenas sagittis turpis at felis viverra, vel consequat neque congue. Sed venenatis magna quis 
+                        nunc sollicitudin, pellentesque molestie turpis tincidunt. Aenean sem justo, pretium a gravida nec, sagittis eget ipsum. Nulla sagittis maximus vestibulum.
+                        Praesent turpis diam, mollis ac odio dignissim, ullamcorper ultrices erat. Proin eu pulvinar dolor. Curabitur id maximus enim. Curabitur facilisis lectus 
+                        id nunc malesuada, id auctor erat tincidunt. Fusce mollis magna ante, eu lacinia libero fermentum eget. Sed imperdiet risus quis facilisis ultrices. 
+                        Ut laoreet, libero a feugiat posuere, velit quam rutrum arcu, vel posuere neque urna quis metus. In interdum elementum viverra. Curabitur tempor, 
+                        libero ac interdum cursus, odio dolor egestas magna, sit amet auctor sapien dolor ut nibh. Nunc rutrum vestibulum sapien et venenatis.
+                    </p>
+                </lightning:card>
+            </div>
+        </div>
+        </p>
+        
+     </lightning:card>    
+</aura:component>
