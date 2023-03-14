@@ -1,0 +1,7 @@
+Zemoga Challange - Part 2
+
+Answer: In this scenario, I would first determine the relationship between Object A and Object B. Based on the question, it seems that Object A has a lookup field to Object B, which means that Object A stores the Id of the related Object B.
+
+To update a field on Object B from the Account trigger, I would need to perform a query on Object A using the Id of Object B that is stored in the lookup field. This would retrieve the Object A record that is related to Object B.
+
+Once I have retrieved the Object A record, I can access the related Object B record using the lookup field and update the required field on Object B. 
